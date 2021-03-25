@@ -78,7 +78,11 @@ create_CV_object <-  function(data_location,
       na.rm = TRUE
     ) %>%
     dplyr::mutate(
-      description_bullets = ifelse(description_bullets != "", paste0("- ", description_bullets), ""),
+      description_bullets = dplyr::case_when(
+        section == "education"        ~ paste0("  ", description_bullets),
+        description_bullets != ""     ~ paste0("- ", description_bullets),
+        TRUE                          ~ ""
+      ),
       start = ifelse(start == "NULL", NA, start),
       end = ifelse(end == "NULL", NA, end),
       start_year = extract_year(start),
@@ -146,6 +150,12 @@ print_section <- function(cv, section_id, glue_template = "default"){
 {timeline}
 
 {description_bullets}
+\n\n\n"
+  } else if (glue_template == "pubs") {
+    glue_template <- "
+{title}
+    
+{timeline}
 \n\n\n"
   }
 
