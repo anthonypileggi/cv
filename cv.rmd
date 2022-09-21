@@ -127,6 +127,8 @@ CV %<>% print_section('industry_experience')
 ```
 
 
+\newpage
+
 Academic Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
@@ -140,6 +142,8 @@ Academic Experience {data-icon=chalkboard-teacher}
 CV %<>% print_section('academic_experience')
 ```
 
+
+\newpage
 
 Publications {data-icon=book}
 --------------------------------------------------------------------------------
@@ -155,9 +159,7 @@ CV %<>% print_section('publications')
 ```
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-<br>
+
 
 Presentations {data-icon=newspaper}
 --------------------------------------------------------------------------------
